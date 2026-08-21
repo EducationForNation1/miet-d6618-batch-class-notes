@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+
+/* Group */
+/* p{
+    color:red;
+} */
+
+
+
+/* #para1{
+    color:red;
+} */
+
+
+
+
+/* .para{
+    color:red;
+} */
+
+
+/* #para2{
+    color:blue;
+} */
+
+/* h1,h2, h3 {
+    color: brown;
+} */
+
+
+/* Background properties
+
+    1. background-color
+    2. background-image
+    3. backgound-size
+
+*/
+
+body{
+    /* background-color:#6e22b5; */
+    /* background-color:rgb(110, 34, 181) */
+    /* background-color:rgba(161, 11, 46, 0.6) */
+
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+
+    /* background-image: url("../images/car.jpg"); */
+    /* background-size: 200px; */
+    /* background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed; */
+}
+
+
+/* 
+
+#edu{
+    color: blue;
+    font-size: 90px;
+    text-align: center;
+    text-transform:uppercase;
+    font-family:"Black Ops One",sans-serif;
+    text-shadow: 5px 5px 10px red;
+    letter-spacing: 12px;
+    
+} */
+
+/* #subtitle{
+    word-spacing: 20px;
+} */
+
+
+
+
+

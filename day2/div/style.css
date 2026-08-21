@@ -1,0 +1,36 @@
+.container1{
+   width: 500px;
+   height: 140px;
+   background-color: aqua;
+   border: 5px dashed black;
+   /* margin-top: 40px; */
+   margin: 0px auto;
+   /* padding-left: 20px; */
+}
+
+.container1 #head1{
+    color: red;
+    padding-left: 10px;
+
+
+}
+
+
+
+
+.container2{
+   width: 500px;
+   height: 140px;
+   background-color: blueviolet;
+   border-radius:30px;
+   padding-left: 20px;
+}
+
+.container2 #head2{
+    color: green;
+    /* padding-left: 40px; */
+}
+
+.container1 p{
+    color: orange;
+}
