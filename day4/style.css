@@ -1,0 +1,43 @@
+.navbar{
+    width:100%;
+    height:50px;
+    background-color: blue;
+
+    display: flex;
+    align-items: center;
+   justify-content: space-evenly;
+}
+
+.logo{
+    border-radius: 50%;
+    margin-top: 5px;
+}
+.logo img{
+    border-radius: 50%;
+}
+
+
+.link-section a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 10px;
+}
+
+
+
+#search{
+    width: 200px;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+}
+
+#btn{
+    width: 70px;
+    height: 35px;
+    border: none;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+}
