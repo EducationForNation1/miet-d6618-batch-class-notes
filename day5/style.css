@@ -1,0 +1,40 @@
+.container{
+    width: 90%;
+    height: 600px;
+    background-color: gainsboro;
+    margin: 10px auto;
+}
+
+.container table{
+    width: 100%;
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+tr,td,th{
+    border: 2px solid black;
+}
+
+
+tr th{
+    height: 30px;
+    background-color: orange;
+    font-size: 16px;
+    color: blue;
+}
+
+
+tr td{
+    height: 25px;
+    text-align: center;
+
+}
+
+
+tr:hover{
+    background-color: blueviolet;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
