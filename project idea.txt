@@ -1,0 +1,100 @@
+AI Chatbot
+AI Resume Builder
+AI Resume Analyzer
+AI Interview Preparation Assistant
+AI Mock Interview System
+AI Code Generator
+AI Code Explainer
+AI Bug Finder
+AI Quiz Generator
+AI MCQ Generator
+AI Question Answering System
+AI Study Assistant
+AI Notes Generator
+AI Notes Summarizer
+AI PDF Summarizer
+AI Article Summarizer
+AI Email Writer
+AI Professional Message Generator
+AI Cover Letter Generator
+AI Job Description Generator
+AI Grammar Checker
+AI Sentence Rewriter
+AI English Speaking Assistant
+AI Vocabulary Builder
+AI Story Generator
+AI Poem Generator
+AI Blog Generator
+AI Caption Generator
+AI YouTube Title Generator
+AI Hashtag Generator
+AI Social Media Post Generator
+AI Product Description Generator
+AI Business Name Generator
+AI Startup Idea Generator
+AI Project Idea Generator
+AI Learning Roadmap Generator
+AI Career Guidance Assistant
+AI Course Recommendation System
+AI Student Performance Analyzer
+AI Attendance Analysis Dashboard
+AI Personal Tutor
+AI Math Problem Solver
+AI Coding Tutor
+AI DSA Problem Assistant
+AI SQL Query Generator
+AI Regex Generator
+AI HTML/CSS Code Generator
+AI Website Content Generator
+AI Portfolio Generator
+AI Landing Page Generator
+AI Website Builder
+AI Image Caption Generator
+AI Image Prompt Generator
+AI Image Generator
+AI Background Remover
+AI Image Analyzer
+AI Object Detection Web App
+AI Face Detection App
+AI Emotion Detection App
+AI Hand Gesture Recognition App
+AI Voice Assistant
+AI Speech-to-Text App
+AI Text-to-Speech App
+AI Voice Translator
+AI Language Translator
+AI Meeting Notes Generator
+AI Customer Support Assistant
+AI FAQ Generator
+AI Shopping Assistant
+AI Product Recommendation System
+AI Recipe Generator
+AI Meal Planner
+AI Fitness Plan Generator
+AI Travel Planner
+AI Expense Categorizer
+AI Personal Finance Assistant
+AI News Summarizer
+AI Fake News Detection App
+AI Sentiment Analysis App
+AI Review Analyzer
+AI Feedback Analyzer
+AI Content Moderation App
+AI Plagiarism Checker
+AI Text Classification App
+AI Keyword Extractor
+AI Document Analyzer
+AI Research Assistant
+AI Flashcard Generator
+AI Exam Preparation Assistant
+AI School Admission Test System
+AI Student Doubt Solver
+AI Teacher Lesson Plan Generator
+AI Assignment Generator
+AI Assignment Evaluator
+AI Personality Quiz
+AI Career Prediction App
+AI Employee Training Assistant
+AI Help Desk System
+AI CRM Assistant
+AI Smart Dashboard

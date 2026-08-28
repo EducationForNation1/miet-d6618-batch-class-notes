@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops & function </title>
+</head>
+<body>
+    
+    <script>
+        // loops ?
+        // execute statements until condition will not false.
+        // types of loops in js
+        // for, while, do-while
+
+        // for loop syntax
+        // for(start : condtion: step){ loop body  }
+        // print numbers from 1 to 5 using for loop.
+
+        // for(i=1; i<=5; i++){
+        //     console.log(i)
+        // }
+
+        // write a program to print all even no b/w 1 to 20.
+        // for(i=1; i<=20; i++){
+        //     if(i %2==0){
+        //         console.log(i)
+        //     }
+        // }
+
+
+        // h/w  
+        // 1 print all prime no 1 to 100
+        // 2 sum of digits ex 234 : ans (2 + 3 + 4 = 9)
+        // 3 check  number is prime or not.
+
+
+
+        // while Loop
+        // syntax 
+        // var i = 1;
+        // while(i <= 5){
+        //     console.log(i);
+        //     i++;
+        // }
+
+
+
+    // imp : function?
+    // func block of code. it is used for code reusability.
+        // wirte one's use many times.
+
+    // types of func in js
+    // 1. built-in  (these funcs are already exists in programming language. like alert(), console.log(), push(), etc...)
+
+    // 2. user defined.( User create their own function based on requirement.)
+
+    // a.) Creating a function
+    // function msg(){
+    //     console.log("this is my own function!...")
+    // }
+
+    // Note : function code will not be execute until function will not call.
+    // calling a function
+    // msg()
+    // Msg() //  you will get an error :-  ReferenceError: Msg is not defined
+    // console.log("i am out..")
+    // msg()
+
+
+
+    // functions with parameters
+    // here num1 and num2 are parameters.
+    // function add(num1, num2){
+    //     console.log(num1 + num2)
+    // }
+
+    // add(10,5)
+
+
+
+
+
+    // The arguments object contains an array of the arguments used when the function was called.
+    // This object contains an entry for each argument passed to the function, the first entry's index starting at 0. The arguments object is not an Array. It is similar to an Array, but does not have any Array properties except length.
+
+    // function add(){
+    //     var num1 =  arguments[0];
+    //     var num2 =  arguments[1];
+    //     var num3 =  arguments[2];
+    //     var num4 =  arguments[3];
+
+    //     console.log(num1 + num2 + num3 + num4)
+    // }
+
+    // add(10,20,30,40)
+    // all arguments values store into arguments object like [10,20,30,40].
+                             
+
+
+
+
+
+    // rest parameter [...args] this is an array.
+    // function add(...args){
+    //     var values = args;
+    //     var total=0
+    //     length = values.length;  //4
+    //     for(i=0; i<length; i++ ){    //0,1,2,3
+    //         total += values[i]
+    //     }
+    //     console.log(values)
+    //     console.log(total)
+    // }
+    // add(10,20)
+
+
+
+
+
+
+    // many function arguments
+
+    // function add(num1,num2,num3){
+    //     console.log(num1 + num2 + num3)  //output(NaN)  (because num3 is undefined.)
+    // }
+    // // add(10,20)
+    // add(1,2,3)
+
+
+// default parameter
+    // function add(num1,num2,num3=0){
+    //     console.log(num1 + num2 + num3)  //output(NaN)  (because num3 is undefined.)
+    // }
+    // add(10,20,5)
+    // // add(1,2)
+
+
+
+//     function add(n1,n2){
+//         result = n1 + n2;
+//         return result;
+//     }
+
+//    var output =  add(10,20);
+//    console.log(output);
+
+
+
+
+    // Variable Scope
+    // Global & local
+    // var x = 10;
+    // function add(){
+    //    var y = 20;
+    //     console.log(x + y);  //30
+    // }
+    // var y= 40;
+    // add();
+    // console.log(x + y);  // because y is a local variable and we cant use outside the function.
+ 
+
+
+
+
+    // block scope
+    // we can create variable using var,let and const.
+
+        // var x = 10; // var has not a block scope.
+        // {
+        //     x = 50;
+        //     console.log(x);
+        // }
+        // console.log(x);
+
+
+
+
+
+        // var x = 10; // var has not a block scope.
+        // {
+        //    let x = 50;
+        //     console.log(x);
+        // }
+        // console.log(x);
+
+
+        // var x = 10; // var has not a block scope.
+        // {
+        //     let y = 50;  // we can update let value.
+        //         y = 30;
+            
+        //     const z = 40; // we can't update.
+        //          // z = 70; // error : typeError
+        //     console.log(x)
+        //     console.log(y);
+        //     console.log(z);
+        // }
+        // console.log(x);
+
+
+
+
+    // Closure ?
+    // A closure is a function having access to the parent scope. It preserve the data from outside. 
+
+    // var globle = "Universe";
+    // function outerFunc(){
+    //     var country = "India";
+    //     function innerFunc(){
+    //         var city = "Meerut";
+    //         console.log(city);
+    //         console.log(country);
+    //         console.log(globle);
+    //     }
+    //     console.log("I am outer function!...")
+    //     innerFunc();
+    // }
+    // outerFunc();
+
+
+
+
+
+    // Function Expression
+    // Assign a function into a variable is called function expression.
+    // let sum = function add(){
+    //     return 10+20;
+    // }
+    // // let value = sum()
+    // // console.log(value)
+
+    // console.log(sum())
+
+
+    // Anonymous Functions
+        // Anonymous functions allow the creation of functions which have no specified name.
+        // Can be stored in a Variable 
+        // Can be Returned in a Function
+        // Can be pass in a Function 
+
+    // let sum = function (){
+    //     return 10+20;
+    // }
+    // console.log(sum());
+
+
+
+    // Arrow Function
+    // An arrow function expression (previously, and now incorrectly known as fat arrow function) has a shorter syntax compared to function expressions. Arrow functions are always anonymous. 
+
+    //  let sum =  ()=>{
+    //     return 10+20;
+    // }
+
+    // console.log(sum());
+
+
+
+
+    // IIFE
+    // IIFE (Immediately Invoked Function Expression) is a JavaScript function that runs as soon as it is defined.
+
+    // (( )=>{ document.write("Education");})( );
+
+//    ( ()=>{ 
+//         console.log("IIFE")
+//     }
+//     )();
+
+    
+    </script>
+</body>
+</html>
