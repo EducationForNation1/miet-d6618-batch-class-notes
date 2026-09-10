@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="container">
+        <form onsubmit="calC(); return false;" name="calculator">
+            <input type="text" name="num1" ><br><br>
+            <input type="text" name="num2" ><br><br>
+            <input type="submit" value="Result">
+        </form>
+    </div>
+
+    <div class="container_result">
+        <h1 id="sum"></h1>
+        <h1 id="sub"></h1>
+        <h1 id="mul"></h1>
+    </div>
+
+    <script>
+        function calC(){
+           let num1 = parseInt(document.forms['calculator'].num1.value);
+           let num2 = parseInt(document.forms['calculator'].num2.value);
+           let sum = num1 + num2;
+           let mul = num1 * num2;
+           let sub = num1 - num2;
+
+            document.getElementById('sum').innerHTML = `Sum of ${num1} + ${num2} = ${sum}`;
+
+            document.getElementById('sub').innerHTML = `Difference of ${num1} - ${num2} = ${sub}`;
+
+
+            document.getElementById('mul').innerHTML = `Products of ${num1} * ${num2} = ${mul}`;
+
+        }
+    </script>
+</body>
+</html>
