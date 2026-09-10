@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects| array | string</title>
+</head>
+<body>
+    
+
+    <script>
+        // here we write js code...
+        //1. creating an object.
+        let obj = {
+            name:'Ajay',
+            age: 23,
+            city:"Delhi",
+            email: 'ajay@gmail.com'
+        }
+
+        
+
+        // 2. add new key
+        obj.phone=9873645362;
+
+
+        // 3. update any key value.
+        obj.city = "New Delhi";
+
+
+        //4. delete any key-valye pair.
+        // delete obj.email;
+
+       
+
+        // factory function.
+        // any function return's  an object is called factory function.
+        function profile(){
+            return {
+            name:'Ajay',
+            age: 23,
+            city:"Delhi",
+            email: 'ajay@gmail.com'
+        }
+ ;
+        }
+
+        let obj1 = profile();
+        console.log(obj1.name);
+        console.log(obj1.age);
+        console.log(obj1.email);
+    </script>
+</body>
+</html>
