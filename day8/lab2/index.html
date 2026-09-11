@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- 
+    1. Create a Login page using html
+    2. Add styling using css
+    3. add validation using js. (Like : email field can't be empty, password field can't be empty.)
+    -->
+
+
+    <div class="container">
+        <form onsubmit="formValidation(); return false;" name="loginForm">
+            <div class="field">
+                <input type="email" name="email" placeholder="Enter email ">
+                <p id="email_error"></p>
+            </div>
+
+            <div class="field">
+                <input type="password" name="pwd" placeholder="Enter Password">
+                <p id="pwd_error"></p>
+            </div>
+
+            <div class="field">
+                <input type="submit" value="Login" id="btn">
+            </div>
+        </form>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

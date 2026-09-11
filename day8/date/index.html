@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date & Time</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+   <h1>Digital Clock</h1>
+    <div class="container">
+
+        <div class="field">
+            <h1>Hrs :  <span  id="hours"></span></h1>
+        </div>
+        <div class="field">
+            <h1 > Minutes : <span id="Minutes"></span></h1>
+        </div>
+        <div class="field">
+            <h1 >seconds : <span id="Seconds"></span></h1>
+        </div>
+    </div>
+
+
+    <script>
+        // let date_Time = new Date();
+        // console.log("Hours : ", date_Time.getHours())
+        // console.log("Minutes : ", date_Time.getMinutes())
+        // console.log("Seconds : ", date_Time.getSeconds())
+        // console.log("Milisencods : ", date_Time.getMilliseconds())
+
+        function digitalClock(){
+
+            
+            setTimeout( ()=>{
+                let date_Time = new Date();
+                document.getElementById("hours").innerText = date_Time.getHours();
+                document.getElementById("Minutes").innerText = date_Time.getMinutes();
+                document.getElementById('Seconds').innerHTML = date_Time.getSeconds();
+
+                digitalClock();
+            },1000)
+        }
+        digitalClock()
+
+        
+        // console.log("years : ", date_Time.getFullYear())
+        // console.log("month : ", date_Time.getMonth())
+        // console.log("day : ", date_Time.getDay())
+      
+        console.log(date_Time)
+    </script>
+</body>
+</html>
