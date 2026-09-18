@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap.css" />
+  </head>
+  <body>
+    <!-- 
+        1. make a multipage website 
+        (index.html, contact.html, login.html, signup.html)
+
+        2. index.html -> nav with icons, cards. tables, header and footer
+        3. contact.html -> contact form header and footer
+        4. login.html -> header and footer , login form(username,password,button)
+        5. signup.html -> header and footer, register form (basic reqired fields.)
+
+    -->
+
+    <!-- navbar-start -->
+    <nav class="navbar navbar-expand-lg bg-primary">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact Us</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">Login</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">SignUp</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <!-- end-navbar -->
+
+   
+    <!-- signup-form start -->
+      <div class="container w-25 mt-5">
+      <form>
+      <div class="mb-3">
+        <label class="form-label">Full Name</label>
+        <input
+          type="text"
+          class="form-control"
+        />
+      
+      </div>
+      <div class="mb-3">
+        <label  class="form-label">Email</label>
+        <input
+          type="email"
+          class="form-control"
+        />
+      </div>
+
+
+       <div class="mb-3">
+        <label  class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+        />
+      </div>
+
+
+       <div class="mb-3">
+        <label  class="form-label">Confirm Password</label>
+        <input
+          type="password"
+          class="form-control"
+        />
+      </div>
+   
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+   <!-- Signup-form end -->
+
+
+
+    <script src="./bootstrap.js"></script>
+  </body>
+</html>
