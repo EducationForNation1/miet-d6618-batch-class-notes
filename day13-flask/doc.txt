@@ -1,0 +1,45 @@
+--- Today Task ---
+whenever you create a new project.
+follows these steps 
+1. create project folder
+2. install virtual env    -  pip install virtualenv
+3. create virtual env     -  python -m venv env
+4. activate virtual env   -  env\Scripts\Avtivate 
+5. install flask - pip install flask 
+6. create app.py file inside project folder.
+7. write your app logic into your app.py file.
+8. app run :- python filename.py  (Like - python app.py)
+
+
+project folder structure
+
+project folder
+    app.py
+    templates
+        index.html
+        about.html
+    static
+        js
+            script.js
+        css
+            style.css
+        images
+            flower.jpg
+            lion.png
+
+
+
+flask - work flow
+1. user(send request from browser) -> 2. route (match) ->3. flask fun( will execute)  ->4. template file (index.html) -> 5. result display on browser 
+
+
+user -> route -> function -> template -> result 
+
+
+MVC architecture ?
+M -> Model  (database)
+V -> UI     (index.html)
+C -> Controller ( Login)
+
+
+
