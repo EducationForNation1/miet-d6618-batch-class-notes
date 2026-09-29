@@ -42,4 +42,66 @@ V -> UI     (index.html)
 C -> Controller ( Login)
 
 
+template-Inheritance
+add static files
+
+
+
+
+----------------------
+requests (methods)
+1. GET - Get Data
+2. POST - Create Data
+3. PUT  - Update Data 
+4. PATCH  - Update Partial Data
+5. DELETE  - Delete Data
+
+
+user Information
+i want to update only name field.
+Name : Ajay
+city : Delhi
+Phone : 9847364834
+
+Get :- is faster than POST.
+
+POST :- For security Purpose.
+
+
+------------------
+error message in flask  (help flash)
+
+1. import flash
+2. add secret key
+3. flash("msg", "class name")
+
+
+.html
+
+ <!-- Fetch and display flashed messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flash-messages-container">
+          {% for category, message in messages %}
+            <div class="flash-message {{ category }}">
+                {{ message }}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+
+
+
+
+---------------------
+contact form done
+validation  done
+Make Database connection
+mail send  (pending...)
+data save into database. (pending...)
+phone no strong validation. (pending...)
+
+
 
