@@ -1,0 +1,10 @@
+{% extends 'base.html' %}{% block title %}Register{% endblock %}{% block content %}
+<div class="auth-box"><h1>Create Account</h1><p class="muted center">Register to continue</p>
+<form id="registerForm" method="POST"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+{% for id,label,name,type in [('fullName','Full Name','full_name','text'),('username','Username','username','text'),('email','Email','email','email'),('phone','Phone','phone','text')] %}
+<div class="form-group"><label for="{{ id }}">{{ label }}</label><input id="{{ id }}" name="{{ name }}" type="{{ type }}"><small id="{{ id }}Error" class="error"></small></div>{% endfor %}
+<div class="form-group"><label for="password">Password</label><div class="password-row"><input id="password" name="password" type="password"><button class="toggle-password" data-target="password" type="button">Show</button></div><small id="passwordError" class="error"></small></div>
+<div class="form-group"><label for="confirmPassword">Confirm Password</label><div class="password-row"><input id="confirmPassword" name="confirm_password" type="password"><button class="toggle-password" data-target="confirmPassword" type="button">Show</button></div><small id="confirmPasswordError" class="error"></small></div>
+<div class="check-row"><input id="terms" name="terms" value="accepted" type="checkbox"><label for="terms">I agree to the Terms & Conditions</label></div><small id="termsError" class="error"></small>
+<button class="btn full" type="submit">Create Account</button></form>
+<p class="center top-gap">Already have an account? <a href="{{ url_for('login') }}">Login</a></p></div>{% endblock %}

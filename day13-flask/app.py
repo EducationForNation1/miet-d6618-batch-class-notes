@@ -101,6 +101,21 @@ def editContact(id):
         return redirect('/')
     return render_template('editContact.html', contact=contact)
 
+@app.route('/delete-contact/<int:id>', methods=['GET','POST'])
+def deleteContact(id):
+    if request.method == "POST":
+        con = sqlite3.connect("students.db")
+        con.execute(
+            'DELETE FROM contact WHERE id=?',(id,)
+        ).fetchone()
+
+        con.commit()
+        con.close()
+        return redirect("/")
+
+    return redirect('/')
+
+
 # entery point
 if __name__ == "__main__":
     app.run(debug=True)

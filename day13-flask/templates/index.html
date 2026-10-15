@@ -27,9 +27,13 @@
                             <td>{{ contact[2] }}</td>
                             <td>{{ contact[3] }}</td>
                             <td>{{ contact[4] }}</td>
-                            <td>
+                            <td class="d-flex">
                                 <a href="/edit-contact/{{ contact[0] }}" class="btn btn-warning text-primary"><i class="bi bi-pencil"></i></a>
-                                <a href="" class="btn btn-danger text-white"><i class="bi bi-trash"></i></a>
+                                <!-- <a href="" class="btn btn-danger text-white"><i class="bi bi-trash"></i></a> -->
+                                <form action="/delete-contact/{{ contact[0] }}" method="POST">
+
+                                    <button type="submit" class="btn btn-danger ms-3 "><i class="bi bi-trash"></i></button>
+                                </form>
                             </td>
                         </tr>
                     {% endfor %}

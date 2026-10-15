@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard | Flask Session{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h1>Welcome, {{ username }}</h1>
+    <p>You can see this page because your login session is active.</p>
+
+    <table>
+        <tr>
+            <th>User ID</th>
+            <td>{{ user_id }}</td>
+        </tr>
+        <tr>
+            <th>Username</th>
+            <td>{{ username }}</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>{{ email }}</td>
+        </tr>
+    </table>
+
+    <div class="actions">
+        <a class="btn" href="{{ url_for('session_info') }}">View Session Data</a>
+        <a class="btn danger-btn" href="{{ url_for('logout') }}">Logout</a>
+    </div>
+</div>
+{% endblock %}

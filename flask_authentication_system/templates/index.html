@@ -1,0 +1,14 @@
+{% extends 'base.html' %}{% block title %}Home{% endblock %}{% block content %}
+<section class="hero-card">
+  <h1>Flask Authentication System</h1>
+  <p>Complete Classes 1–15 project using Flask, HTML, CSS and JavaScript.</p>
+  <div class="actions">
+    {% if user %}
+      <a class="btn" href="{{ url_for('admin_dashboard' if user.role == 'admin' else 'dashboard') }}">Dashboard</a>
+      <a class="btn outline" href="{{ url_for('profile') }}">Profile</a>
+    {% else %}
+      <a class="btn" href="{{ url_for('register') }}">Register</a>
+      <a class="btn outline" href="{{ url_for('login') }}">Login</a>
+    {% endif %}
+  </div>
+</section>{% endblock %}

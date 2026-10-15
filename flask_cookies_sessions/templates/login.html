@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Login | Flask Session{% endblock %}
+
+{% block content %}
+<div class="card small-card">
+    <h1>Login</h1>
+    <p>Enter the demo credentials to create a session.</p>
+
+    <form method="POST">
+        <label>Email</label>
+        <input type="email" name="email" placeholder="admin@gmail.com" required>
+
+        <label>Password</label>
+        <input type="password" name="password" placeholder="12345" required>
+
+        <button class="btn form-btn" type="submit">Login</button>
+    </form>
+
+    <div class="credentials">
+        Email: admin@gmail.com<br>
+        Password: 12345
+    </div>
+</div>
+{% endblock %}

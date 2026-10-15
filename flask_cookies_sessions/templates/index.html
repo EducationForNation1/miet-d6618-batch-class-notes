@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Home | Flask Cookies & Sessions{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h1>Cookies and Sessions in Flask</h1>
+    <p>This working project demonstrates both concepts step by step.</p>
+
+    <h2>1. Cookie Demo</h2>
+    <p>Use these buttons in order:</p>
+    <div class="actions">
+        <a class="btn" href="{{ url_for('set_cookie') }}">1. Set Cookie</a>
+        <a class="btn" href="{{ url_for('get_cookie') }}">2. Read Cookie</a>
+        <a class="btn danger-btn" href="{{ url_for('delete_cookie') }}">3. Delete Cookie</a>
+    </div>
+
+    <h2>2. Session Demo</h2>
+    <p>Login creates a Flask session. Dashboard is protected and logout clears the session.</p>
+
+    <div class="credentials">
+        <strong>Demo Login</strong><br>
+        Email: admin@gmail.com<br>
+        Password: 12345
+    </div>
+
+    <a class="btn" href="{{ url_for('login') }}">Open Login</a>
+</div>
+{% endblock %}

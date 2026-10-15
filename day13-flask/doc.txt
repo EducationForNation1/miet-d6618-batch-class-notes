@@ -105,3 +105,18 @@ phone no strong validation. (pending...)
 
 
 
+
+
+
+
+Home work - Assisment - 5
+Create New flask project
+Perform CRUD Operation 
+
+C- Create New
+R- Read All 
+U - Update record
+D - Delete
+
+Authentication system - overview 
+

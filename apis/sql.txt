@@ -1,0 +1,352 @@
+  API - Application Programming Interface (mysql -> pwd : root
+--------------------------------------------------
+
+1. Project Structure  & download mysql and install
+
+
+2. Install Required Packages : pip install flask mysql-connector-python
+
+3. Create MySQL Database : CREATE DATABASE flask_crud;
+		               USE flask_crud;
+4. Create Students Table
+CREATE TABLE students (
+ id INT PRIMARY KEY AUTO_INCREMENT,
+ name VARCHAR(100) NOT NULL,
+ age INT NOT NULL,
+ course VARCHAR(100) NOT NULL,
+ );
+
+
+5. Insert  Some Data
+INSERT INTO students (name, age, course, city)
+VALUES
+('Aman', 21, 'Python', 'Noida'),
+('Rahul', 23, 'Flask', 'Delhi'),
+('Priya', 20, 'Python', 'Ghaziabad');
+
+SELECT * FROM students;
+
+6. Basic Flask Setup
+from flask import Flask, jsonify, request
+import mysql.connector
+app = Flask(__name__)
+
+7.MySQL Connection
+db = mysql.connector.connect(
+ host="localhost",
+ user="root",
+ password="your_password",
+ database="flask_crud"
+)
+
+
+
+8. Home Route
+@app.route("/")
+def home():
+ return jsonify({
+ "message": "Flask MySQL CRUD API is running"
+ })
+
+
+
+9. GET All Students
+@app.route("/students", methods=["GET"])
+def get_students():
+      cursor = db.cursor(dictionary=True)
+      cursor.execute("SELECT * FROM students")
+      students = cursor.fetchall()
+      cursor.close()
+     return jsonify({
+    "total": len(students),
+    "students": students
+    }), 200
+
+
+10.  GET Single Student by ID
+@app.route("/students/<int:id>", methods=["GET"])
+def get_student(id):
+ cursor = db.cursor(dictionary=True)
+ cursor.execute(
+ "SELECT * FROM students WHERE id = %s",
+ (id,)
+ )
+ student = cursor.fetchone()
+ cursor.close()
+ if student:
+ return jsonify({
+ "student": student
+ }), 200
+ return jsonify({
+ "message": "Student not found"
+ }), 404
+
+
+
+11. POST New Student
+@app.route("/students", methods=["POST"])
+def add_student():
+ data = request.get_json()
+ if not data:
+ return jsonify({
+ "message": "JSON data is required"
+ }), 400
+ required_fields = [
+ "name",
+ "age",
+ "course",
+ "city"
+]
+ for field in required_fields:
+ if field not in data:
+ return jsonify({
+ "message": f"{field} is required"
+ }), 400
+ cursor = db.cursor()
+ query = '''
+ INSERT INTO students
+ (name, age, course, city)
+ VALUES (%s, %s, %s, %s)
+ '''
+ values = (
+ data["name"],
+ data["age"],
+ data["course"],
+ data["city"]
+ )
+ cursor.execute(query, values)
+ db.commit()
+ new_id = cursor.lastrowid
+ cursor.close()
+ return jsonify({
+ "message": "Student added successfully",
+ "id"
+}), 201
+
+
+
+
+
+PUT Complete Update
+@app.route("/students/<int:id>", methods=["PUT"])
+def update_student(id):
+ data = request.get_json()
+ cursor = db.cursor()
+ query = '''
+ UPDATE students
+ SET name = %s,
+ age = %s,
+ course = %s,
+ city = %s
+ WHERE id = %s
+ '''
+ values = (
+ data["name"],
+ data["age"],
+ data["course"],
+ data["city"],
+ id
+ )
+ cursor.execute(query, values)
+ db.commit()
+
+if cursor.rowcount == 0:
+ cursor.close()
+ return jsonify({
+ "message": "Student not found"
+ }), 404
+ cursor.close()
+ return jsonify({
+ "message": "Student updated successfully"
+ }), 200
+
+
+PATCH Partial Update
+@app.route("/students/<int:id>", methods=["PATCH"])
+def patch_student(id):
+ data = request.get_json()
+ cursor = db.cursor()
+ if "name" in data:
+ cursor.execute(
+ "UPDATE students SET name = %s WHERE id = %s",
+ (data["name"], id)
+ )
+ if "age" in data:
+ cursor.execute(
+ "UPDATE students SET age = %s WHERE id = %s",
+ (data["age"], id)
+ )
+ if "course" in data:
+ cursor.execute(
+ "UPDATE students SET course = %s WHERE id = %s",
+ (data["course"], id)
+ )
+ if "city" in data:
+ cursor.execute(
+ "UPDATE students SET city = %s WHERE id = %s",
+ (data["city"], id)
+ )
+ db.commit()
+ cursor.close()
+ return jsonify({
+ "message": "Student updated successfully"
+ }), 200
+
+
+
+DELETE Student
+@app.route("/students/<int:id>", methods=["DELETE"])
+def delete_student(id):
+ cursor = db.cursor()
+ cursor.execute(
+ "DELETE FROM students WHERE id = %s",
+ (id,)
+ )
+ db.commit()
+ if cursor.rowcount == 0:
+ cursor.close()
+ return jsonify({
+ "message": "Student not found"
+ }), 404
+ cursor.close()
+ return jsonify({
+ "message": "Student deleted successfully"
+ 
+
+
+Search Student by Name
+@app.route("/students/search", methods=["GET"])
+def search_students():
+ name = request.args.get("name", "")
+ cursor = db.cursor(dictionary=True)
+ query = '''
+ SELECT *
+ FROM students
+ WHERE name LIKE %s
+ '''
+ cursor.execute(
+ query,
+ ("%" + name + "%",)
+ )
+ students = cursor.fetchall()
+ cursor.close()
+ return jsonify({
+ "total": len(students),
+ "students": students
+ }), 200
+
+
+
+
+
+ Filter by Course
+@app.route("/students/filter", methods=["GET"])
+def filter_students():
+ course = request.args.get("course")
+ cursor = db.cursor(dictionary=True)
+ cursor.execute(
+ "SELECT * FROM students WHERE course = %s",
+ (course,)
+ )
+ students = cursor.fetchall()
+ cursor.close()
+ return jsonify({
+ "total": len(students),
+ "students": students
+ }), 200
+
+
+
+
+Multiple Filter
+@app.route("/students/filter/multiple", methods=["GET"])
+def multiple_filter():
+ course = request.args.get("course")
+ city = request.args.get("city")
+ cursor = db.cursor(dictionary=True)
+ query = '''
+ SELECT *
+ FROM students
+ WHERE course = %s
+ AND city = %s
+ '''
+ cursor.execute(
+ query,
+ (course, city)
+ )
+ students = cursor.fetchall()
+ cursor.close()
+ return jsonify({
+ "total": len(students),
+ "students": students
+ }), 200
+
+
+Age Filter
+@app.route("/students/age", methods=["GET"])
+def filter_by_age():
+ min_age = request.args.get(
+ "min_age",
+ type=int
+ )
+ max_age = request.args.get(
+ "max_age",
+ type=int
+ )
+ cursor = db.cursor(dictionary=True)
+ query = '''
+ SELECT *
+ FROM students
+ WHERE age BETWEEN %s AND %s
+ '''
+ cursor.execute(
+ query,
+ (min_age, max_age)
+ )
+ students = cursor.fetchall()
+ cursor.close()
+ return jsonify({
+ "total": len(students),
+ "students": students
+ }), 200
+
+
+
+
+
+Sorting
+@app.route("/students/sort", methods=["GET"])
+def sort_students():
+ sort_by = request.args.get("by", "id")
+ order = request.args.get("order", "asc")
+ allowed_fields = [
+ "id",
+ "name",
+ "age",
+ "course",
+ "city"
+ ]
+ if sort_by not in allowed_fields:
+ return jsonify({
+ "message": "Invalid sorting field"
+ }), 400
+ if order.lower() not in ["asc", "desc"]:
+ return jsonify({
+ "message": "Order must be asc or desc"
+ }), 400
+ cursor = db.cursor(dictionary=True)
+ query = f'''
+ SELECT *
+ FROM students
+ ORDER BY {sort_by} {order}
+ '''
+ cursor.execute(query)
+ students = cursor.fetchall()
+ cursor.close()
+ return jsonify({
+ "students": students
+ }), 200
+
+
+
+

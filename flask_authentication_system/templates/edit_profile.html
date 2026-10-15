@@ -1,0 +1,4 @@
+{% extends 'base.html' %}{% block title %}Edit Profile{% endblock %}{% block content %}
+<div class="auth-box"><h1>Edit Profile</h1><form id="editProfileForm" method="POST"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+{% for id,label,name,value,type in [('fullName','Full Name','full_name',user.full_name,'text'),('username','Username','username',user.username,'text'),('email','Email','email',user.email,'email'),('phone','Phone','phone',user.phone or '','text')] %}<div class="form-group"><label>{{ label }}</label><input id="{{ id }}" name="{{ name }}" value="{{ value }}" type="{{ type }}"><small id="{{ id }}Error" class="error"></small></div>{% endfor %}
+<div class="actions"><button class="btn" type="submit">Save Changes</button><a class="btn outline" href="{{ url_for('profile') }}">Cancel</a></div></form></div>{% endblock %}

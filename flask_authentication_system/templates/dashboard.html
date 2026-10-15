@@ -1,0 +1,11 @@
+{% extends 'base.html' %}{% block title %}Dashboard{% endblock %}{% block content %}
+<div class="section-card"><h1>Welcome, {{ user.full_name }}</h1><p class="muted">Manage your account from your dashboard.</p></div>
+<div class="cards">
+<div class="card"><span>Username</span><strong>{{ user.username }}</strong></div>
+<div class="card"><span>Email</span><strong>{{ user.email }}</strong></div>
+<div class="card"><span>Role</span><strong>{{ user.role|title }}</strong></div>
+<div class="card"><span>Status</span><strong>{{ 'Active' if user.is_active else 'Blocked' }}</strong></div>
+<div class="card"><span>Verification</span><strong>{{ 'Verified' if user.is_verified else 'Not Verified' }}</strong></div>
+<div class="card"><span>Previous Login</span><strong>{% if previous_login %}{{ previous_login.login_time.strftime('%d %b %Y %I:%M %p') }}{% else %}First Login{% endif %}</strong></div>
+</div>
+<div class="actions"><a class="btn" href="{{ url_for('profile') }}">View Profile</a>{% if user.role=='admin' %}<a class="btn outline" href="{{ url_for('admin_dashboard') }}">Admin Panel</a>{% endif %}</div>{% endblock %}
